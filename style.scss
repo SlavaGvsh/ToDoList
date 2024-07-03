@@ -1,16 +1,19 @@
 * {
    list-style-type: none;
    box-sizing: border-box;
+   padding: 0;
+   margin: 0;
 }
 html,
 body {
    height: 100vh;
    font-family: sans-serif;
    background-color: #6394ef;
+   padding: 20px 0;
 }
 .container {
    width: 100%;
-   height: 100%;
+   // min-height: 80px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -19,7 +22,7 @@ body {
    &__container {
       background-color: #0b1174;
       width: 80%;
-      height: 80%;
+      min-height: 80%;
       border-radius: 20px;
       padding: 20px;
       display: flex;
@@ -38,6 +41,7 @@ body {
       font-size: 50px;
       font-weight: 800;
       color: #fff;
+      margin-bottom: 20px;
    }
    &__input-container {
       display: flex;
@@ -49,6 +53,7 @@ body {
    &__input {
       outline-color: #fff;
       width: 80%;
+      padding: 5px;
    }
    &__btn {
       background-color: #ff0000;
@@ -60,6 +65,9 @@ body {
          opacity: 0.5;
       }
    }
+   &__error {
+      margin-bottom: 10px;
+   }
    &__list {
       width: 60%;
       margin: 0 auto;
@@ -69,14 +77,35 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      &:not(:last-child){
+      word-break: break-all;
+      &:not(:last-child) {
          margin-bottom: 10px;
       }
-      button{
+      button {
          cursor: pointer;
          background-color: #343b16;
          color: #bde90f;
          border-radius: 5px;
       }
    }
+   &__block-wrapper{
+      display: flex;
+      gap: 5px;
+      word-break: auto-phrase;
+      margin-left: 5px;
+
+   }
+}
+
+.todo__list-visible-border {
+   border: 1px solid #fff;
+   padding: 10px;
+   border-radius: 5px;
+}
+.todo__list-hidden-border {
+   border: none;
+}
+.todo__item--completed{
+   background-color: #d3d3d3; 
+  text-decoration: line-through; 
 }
